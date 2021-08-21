@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action="insertform.php" method="post">
+	
+Topic: <input type="text" name="topic"><br />
+Name: <input type="text" name="name"><br />
+Attendance: <input type="text" name="attendance"><br />
+
+
+
+<input type="submit" name="submit">
+
+
+</form>
+
+
+<?php
+
+if (isset($_POST['submit'])){
+	
+	$con = mysql_connect("localhost","la","abcdefgh");
+	if(!$con){
+
+	die("Can not connect: " .mysql_error());
+}
+
+
+
+mysql_select_db("lg",$con);
+
+$sql = "INSERT INTO lectures (topic,name,attendance) VALUES ('$_POST[topic]','$_POST[name]','$_POST[attendance]')";
+
+mysql_query($sql,$con);
+
+
+
+
+
+
+
+
+
+
+
+
+
+mysql_close($con);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+?>
+
+
+
+
+
+
+
+</body>
+</html>

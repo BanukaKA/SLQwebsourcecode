@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Web Calcularor</title>
+<style type="text/css">
+	
+	body {
+    background-color: red;
+   }
+
+   p {
+   	color: black;
+   }
+
+</style>
+<script type="text/javascript">
+	
+	function add() {
+
+      var numberOne = document.getElementById("numberOne").value;
+      var numberTwo = document.getElementById("numberTwo").value;
+      var numberThree=document.getElementById("numberThree").value;
+      var numberFour=document.getElementById("numberFour").value;
+      var numberFive=document.getElementById("numberFive").value;
+      var answer = +numberOne + +numberTwo + +numberThree + +numberFour + +numberFive;
+
+       document.getElementById("answer").innerHTML = answer;
+
+	}
+
+	function substract() {
+
+       var numberOne = document.getElementById("numberOne").value;
+       var numberTwo = document.getElementById("numberTwo").value;
+       var numberThree=document.getElementById("numberThree").value;
+       var numberFour=document.getElementById("numberFour").value;
+       var numberFive=document.getElementById("numberFive").value;
+
+       var answer = +numberOne - +numberTwo - +numberFour - +numberFive;
+
+        document.getElementById("answer").innerHTML = answer;
+
+	}
+
+  function devide()  {
+
+       var numberOne = document.getElementById("numberOne").value;
+       var numberTwo = document.getElementById("numberTwo").value;
+
+       var answer = +numberOne / +numberTwo;
+        
+        document.getElementById("answer").innerHTML = answer;
+
+}
+
+  function multiply()   {
+
+       var numberOne = document.getElementById("numberOne").value;
+       var numberTwo = document.getElementById("numberTwo").value;
+       var numberThree=document.getElementById("numberThree").value;
+       var numberFour=document.getElementById("numberFour").value;
+       var numberFive=document.getElementById("numberFive").value;
+
+       var answer = +numberOne * +numberTwo * +numberThree * +numberFour * +numberFive;
+
+         document.getElementById("answer").innerHTML = answer;
+
+
+
+
+
+  }  
+  function showmyname() {
+     alert("I am Banuka. I am a Sri Lankan.")
+  
+  }
+</script>
+
+	<title>CALCULATOR</title>
+</head>
+<body>
+
+<input type="text" id="numberOne">
+<input type="text" id="numberTwo">
+<input type="text" id="numberThree">
+<input type="text" id="numberFour">
+<input type="text" id="numberFive">
+
+<br></br>
+Answer:
+<label id="answer"></label>
+<br></br>
+
+<button onclick="add()">Add</button>
+<button onclick="substract()">Substract</button>
+<button onclick="devide()">Devide</button>
+<button onclick="multiply()">Multiply</button>
+
+<p>Do and try</p>
+<button onclick="showmyname()"></button>
+<p>This is a calculator.From this web page can add or subtracts any number.Then you try.Check that this is true or false.<p/>
+<body/>
+</html>

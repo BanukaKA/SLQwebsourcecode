@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+
+
+body{
+  margin:1;
+  
+}
+.navbar{
+     width:100%;
+   background:#6699cc;
+   box-shadow:0 2px 5px o regba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+ul {
+      text-align:left;
+      display:inline;
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+ul li{
+       font:bold 12px/18px sans-serif;
+     display:inline-block;
+     position:relative;
+     padding:25px 20px;
+     background:#6699ccc;
+     
+}
+ul li a{
+        text-decoration:none;
+    padding:25px 20px;
+    color:white;
+    font-size:18px;
+
+}
+ul li:hover{
+    background:#4dd0e1;
+  color:white;
+}
+ul li ul {
+     padding:0;
+   position:absolute;
+   top:70px;
+   left:0;
+   width:250 px;
+   display:none;
+   visibility:hidden;
+    box-shadow:0 2px 5px o regba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+ul li ul li {
+     background:#00acc1;
+   display:block;
+
+}
+ul li ul li:hover{
+    background:#4dd0e1;
+  
+  
+  
+  
+}   
+ul li:hover ul{
+        display:block;
+    opacity:1;
+    visibility:visible;
+
+
+
+} 
+ul ul ul li{
+     display:none;
+
+} 
+ul ul li:hover li {
+         display:block;
+     
+
+}
+ul ul ul {
+
+     left:100%;
+     top:0;
+
+}
+
+form{
+
+    width: 1000px;
+    margin: auto;
+    margin-top: 5px;
+
+}
+
+
+.search{
+
+  width: 60%;
+  font-size: 20px;
+  align-self: center;
+  border: 3;
+  margin-top: 10px;
+  background: cyan;
+  display:block;
+  margin: 20px auto;
+  text-align: center;
+  border: 6px solid #3498db;
+  padding: 14px 10px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
+
+}
+
+
+.submit{
+
+  border: 1;
+  display:block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: blue;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+  background: white;
+
+}
+
+.past{
+
+
+
+
+  width: 15%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: purple;
+  color: white;
+}
+
+.l{
+
+  width: 13%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: cyan;
+  display:block;
+  border-radius: 24px;
+  border: 2px solid #3498db;
+  text-decoration: none;
+ 
+  
+}
+
+.lb{
+   width: 10%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: cyan;
+  display:block;
+  border-radius: 24px;
+  border: 2px solid #3498db;
+  text-decoration: none;
+}
+
+.lc{
+   width: 7%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: cyan;
+  display:block;
+  border-radius: 24px;
+  border: 2px solid #3498db;
+  text-decoration: none;
+}
+
+.ld{
+   width: 7%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: cyan;
+  display:block;
+  border-radius: 24px;
+  border: 2px solid #3498db;
+  text-decoration: none;
+}
+
+
+
+.le{
+
+   width: 35%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: cyan;
+  display:block;
+  border-radius: 24px;
+  border: 2px solid #3498db;
+  text-decoration: none;
+}
+
+.h{
+
+  text-decoration: underline;
+  font-size: 20px;
+
+}
+
+
+
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: #000066;
+}
+a:active {
+  text-decoration: none;
+}
+a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+body,td,th {
+  font-family: Georgia, Times New Roman, Times, serif;
+  font-style: italic;
+}
+</style>
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  <sound src="ab.mp3" loop="2" delay="9">
+  <i><div id="txt"></div>
+
+  <div class = "navbar">
+    <ul>
+       
+      <li><a href="index.html">Home</a></li> 
+      <li><a href="#">Services &nbsp&#8681</a>
+    <ul>
+
+          <li><a href="form.html">ConnectUs</a></li>
+          <li><a href="cal.html">Calculater</a></li> 
+      <li><a href="game3.html">Quizes</a></li>
+      <li><a href="search.html">SearchUs</a></li>
+        <li><a href="#">Enjoyment</a>
+      <ul>
+           
+         
+          
+         <li><a href="bard.html">ProSites </a></li> 
+        <li><a href="game1.html">Games</a></li> 
+      </ul>  
+      
+      
+      
+      </li> 
+    </ul>
+    
+    
+    </li>
+      <li><a href="about.html">About</a></li> 
+      <li><a href="#">Knowledge &nbsp&#8681 </a>
+
+  <ul>   <li><a href="subjects.html">Subjects</a>
+       <li><a href="geo.html">Geography</a></li> 
+     <li><a href="science.html">Science</a></li> 
+     <li><a href="world history.html">History</a></li> 
+     <li><a href="arts.html">Arts&Cultrure</a></li> 
+    
+    
+    
+    
+    
+    
+    </ul>
+
+
+      
+
+</li>
+    </ul>
+
+</div>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+  <div>
+      <input type="text" name="text" class="search" placeholder="Search Here">
+      <a href="search.html" class="submit">Search</a>
+
+    </div>
+
+  
+  <u><h1 align="center"> www.SLquiz.com<br> Sri Lanka </h1></u><br>
+    <p align="center"> <big> <br>SLquiz is actually a knowladge site. SL or sri lanka ; The owner of this site is Master Banuka Kumara Ambegoda who is learning<br>
+  in Dharmaraja College Kandy,Sri Lanka<br>This site is specially valuble for Sri Lankan quizzers.<br> This is a huge try to give knowlage to Sri Lankans.<br> Like wise we give you knowladge in various sides to your minds and brains and develope your knowlage and IQ as well.<br> <hr> "Knowlage converts a small step to a huge Jump"
+    <br>And also these are our topics.<br></p></big>
+
+
+        <p> <b>
+    <br><br>1.Arts and Culture
+    <br>2.Science and technowlogy
+    <br>3.World history
+    <br>4.Geography</b>
+    <hr>
+    </p>
+    <a href="subjects.html"><img src="binary.png" width="444" height="319" border="10" title="The binary machinary language usingin ICT.GO TO SUBJECTS PAGE" align="center"></a>
+    CLICK ON THE IMAGE TO VIEW THE SUBJECTS AND COMMENTS PAGE
+    <hr><br>Binary coding language using in computerprogramming. These are consists of only two nombers as the computer also can identify two things. <br> power supplied or not theyuse one and zero thats how a computer do these wonderful things.</p>
+    <hr><br>
+    <h2 align="center">Our Topics</h2>
+<a href="science.html"><img src="My Tablet 070.JPG" width="300" height="200" border="5" title="Science and Technowlogy.Our Page" align="left"></a>
+<a href="world history.html"><img src="My Tablet 316.jpg" width="300" height="200" border="5" title="World History.Our Page" align=""></a>
+<a href="arts.html"><img src="My Tablet 065.jpg" width="300" height="200" border="5" title="World of Arts.Our Page" align=""></a>
+<a href="eo.html"><img src="SLC.png" width="300" height="200" border="5" title="Geography.Our Page" align=""></a><br>
+<a href="science.html">Science and Technowlogy</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="world history.html">World History</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="arts.htmlts">Arts and Culture</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="geo.html">Geography and Landscapes</a>
+
+    <hr> <p> Click toconnect us by Facebook</p>
+    <a href="http://www.facebook.com">
+    <hr>
+    <br>
+    Bark.facebook.com</a>
+    <p>Our comment box is in subjects page. What do you tell about the site.</p>
+    <p>Connect us in facebook with the above link. </p>
+    <hr><table border="4">
+    <tr>
+    <th>Country</th>
+    <th>Currency</th>
+    <th>Capital</th>
+    </tr>
+    <tr>
+      <td>Thailand</td>
+      <td>Bath</td>
+      <td>Bangkok</td>
+
+    </tr>
+    <tr>
+      <td>Pillipine</td>
+      <td>Pillipineian Pesso</td>
+      <td>Manila</td>
+    </tr>
+    <tr>
+      <td>China</td>
+      <td>RMB</td>
+      <td>Bejing</td>
+    </tr>
+    <h2>Contact Us</h2>
+    <p>If You Want to contact me . For any more knowlage on this things. Plese call me this Phone number
+
+
+    <br>
+    Click It.</p>
+    
+
+    <button onClick="myFunction()">077#######</button>
+    <script>
+    function myFunction() {
+         alert("0777386871 - Master. Kumara Ambegoda!");
+         }
+         </script>
+
+         <button onClick="myFunction()">077#######</button>
+         <script>
+          function myFunction() {
+            alert("0777386891  - Master. Banuka Ambegoda!")
+          }
+         </script>
+
+         <hr>
+                                              <nav>
+          
+
+        
+         </nav>
+         <h3 class="h">Calculator</h3>
+         <form style="width: 200px;
+                    height: 100px;
+                    background: #673ab7;
+                    float: left;
+                    margin: 10px;
+                    box-shadow: 0.2px 3px rgba(0,0,0,0.5);
+                    border-radius: 2px;
+                    text-align: center;">
+         <a href="cal.html" class="l"> 1.Web Calculator</a><br>
+         <a href="calculator.html" class="l"> 2. Web Calculator </a>
+         <hr>
+         <h3 class="h">Games</h3>
+         <a href="game1.html" class="lb">1.Move it up</a><br>
+         <hr>
+         <br><h3 class="h">Tests And Quizes</h3>
+         <a href="game2.html" class="lc">1.Quiz 1</a><br>
+         <a href="game3.html" class="ld">2.Quiz 2</a><br>
+         <hr>
+         <a href="form.html" class="le">#Connect with us; Fill the registration form# </a>
+         </form>
+         <hr>
+         
+         <div align="right"><a href="#top" class="past">Back To Top </a>
+         </div>
+</div>
+
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+
+</body>
+</html>
