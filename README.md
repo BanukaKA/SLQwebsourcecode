@@ -1,7 +1,7 @@
 # SLQwebsourcecode
 # html
 # css
-$ js
+# js
 # Banuka Ambegoda
 This my first ever website developed via basic html and css
 This is mostly a raw html file embeded with a few more features like quizzing pages JS games 
